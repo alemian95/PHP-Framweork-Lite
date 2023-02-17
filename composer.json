@@ -1,0 +1,24 @@
+{
+    "name": "alemian95/phplite",
+    "authors": [
+        {
+            "name": "Alessandro Mian",
+            "email": "alessandromian95@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "./App/",
+            "Core\\": "./Core/"
+        }
+    },
+    "require": {
+        "symfony/dotenv": "^6.0",
+        "symfony/http-foundation": "^6.0",
+        "doctrine/dbal": "^3.6",
+        "symfony/var-dumper": "^6.0",
+        "phpmailer/phpmailer": "^6.7",
+        "nesbot/carbon": "^2.66",
+        "firebase/php-jwt": "^6.4"
+    }
+}

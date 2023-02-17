@@ -1,0 +1,2 @@
+INDEX
+<?php dump($variable); ?>
