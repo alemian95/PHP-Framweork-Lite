@@ -2,10 +2,11 @@
 
 namespace Core;
 
+use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\DriverManager;
-use Error;
 use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -13,11 +14,12 @@ require_once __DIR__ . '/../vendor/autoload.php';
 class App
 {
 
-    public static $db = null;
+    public static ?Connection $db = null;
 
     public static $routes = [];
 
     public static Request $request;
+    public static Session $session;
 
     public static function boot()
     {
@@ -50,6 +52,8 @@ class App
         static::$routes = include __DIR__ . "/../routes.php";
 
         static::$request = Request::createFromGlobals();
+        static::$session = new Session();
+        static::$session->start();
 
         $requestUri = static::$request->getRequestUri();
         $method = static::$request->getMethod();

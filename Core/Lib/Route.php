@@ -2,14 +2,11 @@
 
 namespace Core\Lib;
 
+use Core\Exceptions\MethodNotAllowedException;
 use Symfony\Component\HttpFoundation\Request;
 
 class Route
 {
-
-    // const PARAM_PLACEHOLDER = "{param}";
-    // const PARAM_REGEX = "[^\s]+";
-    // const PARAM_REGEX = "([A-Za-z0-9-_%]+)";
 
     const PARAM_INT_PLACEHOLDER = "{int}";
     const PARAM_INT_REGEX = "([0-9]+)";
@@ -50,7 +47,7 @@ class Route
     {
         if (! in_array(strtoupper($method), self::$allowed_methods))
         {
-            die("Method not allowed");
+            throw new MethodNotAllowedException;
         }
         $this->method = strtoupper($method);
         return $this;
