@@ -10,6 +10,19 @@ class TestController
 
     public function test(Request $request)
     {
-        echo 'test';
+        dump(User::all());
+    }
+
+    public function user(Request $request, $user_id)
+    {
+        $user = User::find($user_id);
+
+        if (! $user)
+        {
+            http_response_code(404);
+            die();
+        }
+
+        dump($user);
     }
 }

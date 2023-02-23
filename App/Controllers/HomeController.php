@@ -17,10 +17,12 @@ class HomeController
             ->render();
     }
 
-    public function param(Request $request, int $param)
+    public function param(Request $request, string $param)
     {
         echo 'param';
         dump($param);
+        dump($request->get('var'));
         dump($request);
+        dump(session());
     }
 }

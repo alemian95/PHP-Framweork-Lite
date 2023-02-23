@@ -10,7 +10,8 @@ class User extends Model
     protected static string $table = 'users';
     protected static array $fields = [
         'id',
-        'name',
+        'first_name',
+        'last_name',
         'email',
         'password'
     ];

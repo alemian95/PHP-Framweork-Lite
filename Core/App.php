@@ -8,7 +8,7 @@ use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/functions.php';
 
 
 class App
@@ -34,18 +34,18 @@ class App
         ini_set('html_errors', 1);
         error_reporting(E_ALL);
 
-        locale_set_default(getenv('APP_LOCALE'));
-        date_default_timezone_set(getenv('APP_TIMEZONE'));
+        locale_set_default(env('APP_LOCALE'));
+        date_default_timezone_set(env('APP_TIMEZONE'));
 
 
         static::$db = DriverManager::getConnection([
-            'dbname' => getenv('DB_DATABASE'),
-            'user' => getenv('DB_USERNAME'),
-            'password' => getenv('DB_PASSWORD'),
-            'host' => getenv('DB_HOST'),
-            'port' => getenv('DB_PORT'),
+            'dbname' => env('MYSQL_DATABASE'),
+            'user' => env('MYSQL_USER'),
+            'password' => env('MYSQL_PASSWORD'),
+            'host' => env('MYSQL_HOST'),
+            'port' => env('MYSQL_PORT'),
             'driver' => 'pdo_mysql',
-            'charset' => 'utf8mb4'
+            'charset' => env('MYSQL_CHARSET'),
         ]);
 
 

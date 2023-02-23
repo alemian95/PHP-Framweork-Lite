@@ -3,7 +3,6 @@
 namespace Core\Lib;
 
 use Core\App;
-use Core\Exceptions\PrimaryKeyValueOverriddenException;
 
 class Model
 {
@@ -55,6 +54,10 @@ class Model
     public static function find($pk_value)
     {
         $query = App::$db->createQueryBuilder()->select('*')->from(static::$table)->where(static::$pk . ' = :value')->setParameter('value', $pk_value)->fetchAssociative();
+        if (! $query)
+        {
+            return null;
+        }
         return new static($query);
     }
 
