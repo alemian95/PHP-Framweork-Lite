@@ -3,10 +3,16 @@
 namespace App\Controllers;
 
 use App\Models\User;
+use Core\Lib\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-class TestController
+class TestController extends Controller
 {
+
+    public function __construct()
+    {
+        parent::__construct();
+    }
 
     public function test(Request $request)
     {

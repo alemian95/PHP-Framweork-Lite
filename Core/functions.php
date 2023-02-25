@@ -1,6 +1,7 @@
 <?php
 
 use Core\App;
+use Core\Exceptions\RouteDoesNotExistsException;
 
 function env($key)
 {
@@ -20,4 +21,13 @@ function session() : \Symfony\Component\HttpFoundation\Session\Session
 function request() : \Symfony\Component\HttpFoundation\Request
 {
     return App::$request;
+}
+
+function route($name, ...$params)
+{
+    if (! isset(App::$routes[$name]))
+    {
+        throw new RouteDoesNotExistsException;
+    }
+    return App::$routes[$name]->url(...$params);
 }
