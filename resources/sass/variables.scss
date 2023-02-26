@@ -4,3 +4,13 @@ $color_light: #ffffff;
 $color_dark: #16161d;
 
 $color_primary: #c9431a;
+
+$breakpoints: (
+    small: 438px,
+    mobile: 768px,
+    tablet: 992px,
+    desktop: 1200px
+);
+
+$margin: 0.25rem;
+$padding: 0.25rem;

@@ -1,0 +1,25 @@
+@use "sass:map";
+
+@mixin mediaDesktop {
+    @media screen and (min-width: map.get($breakpoints, "desktop")) {
+        @content
+    }
+}
+
+@mixin mediaTablet {
+    @media screen and (min-width: map.get($breakpoints, "tablet")) { 
+        @content
+    }
+}
+
+@mixin mediaMobile {
+    @media screen and (min-width: map.get($breakpoints, "mobile")) {
+        @content
+    }
+}
+
+@mixin mediaSmall {
+    @media screen and (min-width: map.get($breakpoints, "small")) {
+        @content
+    }
+}
