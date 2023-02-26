@@ -91,7 +91,7 @@ class Route
             throw new MissingParameterException;
         }
 
-        return getenv('APP_URL') . $uri;
+        return env('APP_URL') . $uri;
     }
 
     public function resolve($params, Request $request)

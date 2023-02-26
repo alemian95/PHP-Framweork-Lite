@@ -9,3 +9,7 @@
 - PHPMailer [https://github.com/PHPMailer/PHPMailer]
 - Nesbot Carbon [https://carbon.nesbot.com/]
 - Firebase JWT [https://github.com/firebase/php-jwt]
+
+## Compiling assets
+
+- Laravel Mix [https://laravel-mix.com/]

@@ -31,3 +31,10 @@ function route($name, ...$params)
     }
     return App::$routes[$name]->url(...$params);
 }
+
+function mix($key)
+{
+    $file_content = file_get_contents(__DIR__ . '/../public/mix-manifest.json');
+    $data = json_decode($file_content, true);
+    return env('APP_URL') . $data[$key] ?? "";
+}
