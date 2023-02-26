@@ -2,8 +2,13 @@ $font_size: 16px;
 
 $color_light: #ffffff;
 $color_dark: #16161d;
-
 $color_primary: #c9431a;
+
+$margin: 0.25rem;
+$padding: 0.25rem;
+
+$steps: 8;
+$columns: 12;
 
 $breakpoints: (
     small: 438px,
@@ -12,5 +17,9 @@ $breakpoints: (
     desktop: 1200px
 );
 
-$margin: 0.25rem;
-$padding: 0.25rem;
+$directions: (
+    t: "top",
+    b: "bottom",
+    l: "left",
+    r: "right"
+);

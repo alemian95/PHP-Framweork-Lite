@@ -48,43 +48,41 @@ a
     flex-wrap: wrap;
 }
 
-@for $i from 1 through 12
+@for $i from 1 through $columns
 {
     .col-#{$i}
     {
         width: 100%;
 
-        @include mediaTablet {
-            width: 100% * ($i / 12);
+        @include media-tablet {
+            width: 100% * ($i / $columns);
         }
     }
 }
 
-@for $i from 1 through 8
+@for $i from 1 through $steps
 {
     .m-#{$i}
     {
         margin: $margin * $i;
     }
 
-    .mt-#{$i}
+    .p-#{$i}
     {
-        margin-top: $margin * $i;
+        padding: $padding * $i;
     }
 
-    .mb-#{$i}
+    @each $key, $value in $directions
     {
-        margin-bottom: $margin * $i;
-    }
+        .m#{$key}-#{$i}
+        {
+            margin-#{$value}: $margin * $i
+        }
 
-    .ml-#{$i}
-    {
-        margin-left: $margin * $i;
-    }
-
-    .mr-#{$i}
-    {
-        margin-right: $margin * $i;
+        .p#{$key}-#{$i}
+        {
+            padding-#{$value}: $margin * $i
+        }
     }
 
     .mx-#{$i}
@@ -97,31 +95,6 @@ a
     {
         margin-top: $margin * $i;
         margin-bottom: $margin * $i;
-    }
-
-    .p-#{$i}
-    {
-        padding: $padding * $i;
-    }
-
-    .pt-#{$i}
-    {
-        padding-top: $padding * $i;
-    }
-
-    .pb-#{$i}
-    {
-        padding-bottom: $padding * $i;
-    }
-
-    .pl-#{$i}
-    {
-        padding-left: $padding * $i;
-    }
-
-    .pr-#{$i}
-    {
-        padding-right: $padding * $i;
     }
 
     .px-#{$i}
@@ -137,7 +110,24 @@ a
     }
 }
 
-.border
-{
-    border: 1px solid black;
-}
+.flex { display: flex; }
+.jcs { justify-content: start; }
+.jcc { justify-content: center; }
+.jce { justify-content: end; }
+.jcsa { justify-content: space-around; }
+.jcsb { justify-content: space-between; }
+.jcse { justify-content: space-evenly; }
+.ais { align-items: start; }
+.aic { align-items: center; }
+.aie { align-items: end; }
+.aib { align-items: baseline; }
+
+.text-light { color: $color_light; }
+.text-dark { color: $color_dark; }
+.text-primary { color: $color_primary }
+
+.bg-light { background: $color_light; }
+.bg-dark { background: $color_dark; }
+.bg-primary { background: $color_primary; }
+
+.border { border: 1px solid black; }
