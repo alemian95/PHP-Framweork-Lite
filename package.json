@@ -5,6 +5,8 @@
     "build": "mix --production"
   },
   "devDependencies": {
+    "browser-sync": "^2.27.12",
+    "browser-sync-webpack-plugin": "^2.3.0",
     "laravel-mix": "^6.0.49",
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.58.3",

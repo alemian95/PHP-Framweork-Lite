@@ -14,7 +14,7 @@ class HomeController extends Controller
         parent::__construct();
     }
 
-    public function index()
+    public function index(Request $request)
     {
         return View::make('home')
             ->title('Home')

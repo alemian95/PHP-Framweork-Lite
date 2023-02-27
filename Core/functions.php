@@ -38,3 +38,13 @@ function mix($key)
     $data = json_decode($file_content, true);
     return env('APP_URL') . $data[$key] ?? "";
 }
+
+function storagePath($path)
+{
+    return str_replace('public', 'storage', request()->server->get('DOCUMENT_ROOT')) . '/' . $path;
+}
+
+function asset($asset)
+{
+    return env('APP_URL') . "/public/" . $asset;
+}
