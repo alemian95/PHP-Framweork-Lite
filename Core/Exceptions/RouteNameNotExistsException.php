@@ -4,9 +4,9 @@ namespace Core\Exceptions;
 
 use Exception;
 
-class RouteDoesNotExistsException extends Exception
+class RouteNameNotExistsException extends Exception
 {
-    protected $message = 'Route does not exists';
+    protected $message = 'Route name not exists';
 
     public function __construct()
     {

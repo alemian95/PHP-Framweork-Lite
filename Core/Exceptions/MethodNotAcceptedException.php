@@ -4,7 +4,7 @@ namespace Core\Exceptions;
 
 use Exception;
 
-class MethodNotAllowedException extends Exception
+class MethodNotAcceptedException extends Exception
 {
     protected $message = 'Method not allowed';
 

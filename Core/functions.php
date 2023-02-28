@@ -1,7 +1,6 @@
 <?php
 
 use Core\App;
-use Core\Exceptions\RouteDoesNotExistsException;
 
 function env($key)
 {
@@ -23,11 +22,16 @@ function request() : \Symfony\Component\HttpFoundation\Request
     return App::$request;
 }
 
+function redirect($url) : \Symfony\Component\HttpFoundation\RedirectResponse
+{
+    return (new \Symfony\Component\HttpFoundation\RedirectResponse($url))->send();
+}
+
 function route($name, ...$params)
 {
     if (! isset(App::$routes[$name]))
     {
-        throw new RouteDoesNotExistsException;
+        throw new \Core\Exceptions\RouteNameNotExistsException;
     }
     return App::$routes[$name]->url(...$params);
 }

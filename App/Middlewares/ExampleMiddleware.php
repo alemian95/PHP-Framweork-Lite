@@ -9,6 +9,6 @@ class ExampleMiddleware extends Middleware
 
     public function resolve()
     {
-        header('location: ' . route('user', 1));
+        return redirect(route('user', 1));
     }
 }

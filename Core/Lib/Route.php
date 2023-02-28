@@ -2,7 +2,7 @@
 
 namespace Core\Lib;
 
-use Core\Exceptions\MethodNotAllowedException;
+use Core\Exceptions\MethodNotAcceptedException;
 use Core\Exceptions\MissingParameterException;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -49,7 +49,7 @@ class Route
     {
         if (! in_array(strtoupper($method), self::$allowed_methods))
         {
-            throw new MethodNotAllowedException;
+            throw new MethodNotAcceptedException;
         }
         $this->method = strtoupper($method);
         return $this;
