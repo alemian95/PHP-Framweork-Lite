@@ -2,13 +2,14 @@
 
 namespace Core;
 
+use Core\Lib\Session;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\DriverManager;
 use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Session\Session;
 
 require_once __DIR__ . '/functions.php';
+require_once __DIR__ . '/helper.php';
 
 
 class App

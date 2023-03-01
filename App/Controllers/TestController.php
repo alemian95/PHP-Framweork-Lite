@@ -21,6 +21,8 @@ class TestController extends Controller
 
     public function user(Request $request, $user_id)
     {
+        dump(csrf());
+
         $user = User::find($user_id);
 
         if (! $user)

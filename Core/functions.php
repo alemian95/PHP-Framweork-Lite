@@ -52,3 +52,12 @@ function asset($asset)
 {
     return env('APP_URL') . "/public/" . $asset;
 }
+
+function csrf()
+{
+    if (! session()->get('csrf'))
+    {
+        session()->set('csrf', random_str(32));
+    }
+    return session()->get('csrf');
+}
